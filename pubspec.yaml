@@ -1,0 +1,44 @@
+name: photo_app
+description: オーバーレイ撮影機能と透過PNG作成機能付きの写真アプリ
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.5
+  
+  # 状態管理
+  flutter_riverpod: ^2.3.6
+  
+  # カメラと画像処理
+  camera: ^0.10.5+2
+  image_picker: ^0.8.7+5
+  image: ^4.0.17
+  path_provider: ^2.1.0
+  permission_handler: ^10.4.0
+  
+  # ユーティリティ
+  uuid: ^3.0.7
+  share_plus: ^7.0.0
+  image_gallery_saver: ^2.0.3
+  
+  # UI関連
+  flutter_svg: ^2.0.7
+  cached_network_image: ^3.2.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.2
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/images/
