@@ -8,8 +8,8 @@
 
 ## 技術スタック
 
-- Flutter/Dart
-- Riverpod（状態管理）
+- Flutter 3.x / Dart
+- flutter_riverpod（状態管理）
 - Camera Package（カメラ制御）
 - Image Package（画像処理）
 
@@ -30,6 +30,16 @@
 4. [詳細設計書（パート4）](./detailed-design-part4.md) - エラー処理（続き）、アプリ初期化と設定、プラットフォーム対応
 5. [詳細設計書（パート5）](./detailed-design-part5.md) - テスト方針、デプロイメント設定、まとめ
 
+### Flutter 3対応について
+
+元々の設計書はFlutter 2をベースに作成されていましたが、[Flutter 3対応のための詳細設計変更点](./updated-design-flutter3.md)にて最新のFlutter 3の機能に対応するための変更をまとめています。主な変更点としては：
+
+- Null Safety対応の完全化
+- 最新の状態管理手法（Riverpod 2.x）の採用
+- Flutter 3のAPI変更への対応
+- パフォーマンス最適化
+- Material 3デザインの導入
+
 ## 環境要件
 
 - Android 8.0以上
@@ -38,13 +48,29 @@
 ## 依存パッケージ
 
 ```yaml
-# 主要依存関係
-flutter_riverpod: ^2.3.6
-camera: ^0.10.5+2
-image_picker: ^0.8.7+5
-image: ^4.0.17
-path_provider: ^2.0.15
-permission_handler: ^10.3.0
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.5
+  
+  # 状態管理
+  flutter_riverpod: ^2.3.6
+  
+  # カメラと画像処理
+  camera: ^0.10.5+2
+  image_picker: ^0.8.7+5
+  image: ^4.0.17
+  path_provider: ^2.1.0
+  permission_handler: ^10.4.0
+  
+  # ユーティリティ
+  uuid: ^3.0.7
+  share_plus: ^7.0.0
+  image_gallery_saver: ^2.0.3
+  
+  # UI関連
+  flutter_svg: ^2.0.7
+  cached_network_image: ^3.2.3
 ```
 
 ## 実装ポイント
@@ -62,3 +88,4 @@ permission_handler: ^10.3.0
 - エラーハンドリングの一元管理
 - メモリ使用の最適化
 - レスポンシブなUI設計
+- Flutter 3の新機能の活用
